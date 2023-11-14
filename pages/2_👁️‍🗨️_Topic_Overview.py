@@ -67,7 +67,7 @@ df = df_cat.loc[(pd.to_datetime(df_cat['at']) >= pd.to_datetime(review_date[0]))
 
 if st.toggle('Show the topic overview'):
     # Read file and keep in variable
-    with open("/Users/janice/Documents/Bootcamp/Git/Capstone/capstone_chat-gpt/charts/visualize_docs.html" ,'r') as f: 
+    with open("charts/visualize_docs.html" ,'r') as f: 
         html_data = f.read()
 
     ## Show in webpage
