@@ -28,7 +28,7 @@ st.title('ReviewRevealer')
 st.write('We are showing ChatGPT Reviews for iOS and Android')
 
 # Load df
-df_raw = pd.read_csv("/Users/janice/Documents/Bootcamp/Git/Capstone/capstone_chat-gpt/data/chatgpt-combined_short_topics.csv")
+df_raw = pd.read_csv("data/chatgpt-combined_short_topics.csv")
 df_raw['appVersion'] = df_raw['appVersion'].replace(np.nan, "not available")
 df_raw["Operating System"] = np.where(df_raw.Source == 'Apple', "iOS", "Android")
 df_raw['at_dt'] = pd.to_datetime(df_raw['at'])
@@ -67,7 +67,7 @@ df = df_cat.loc[(pd.to_datetime(df_cat['at']) >= pd.to_datetime(review_date[0]))
 
 if st.toggle('Show the topic overview'):
     # Read file and keep in variable
-    with open("/Users/janice/Documents/Bootcamp/Git/Capstone/capstone_chat-gpt/charts/visualize_docs.html" ,'r') as f: 
+    with open("charts/visualize_docs.html" ,'r') as f: 
         html_data = f.read()
 
     ## Show in webpage

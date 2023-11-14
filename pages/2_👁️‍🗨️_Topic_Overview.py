@@ -28,7 +28,7 @@ st.title('ReviewRevealer')
 st.write('We are showing ChatGPT Reviews for iOS and Android')
 
 # Load df
-df_raw = pd.read_csv("/Users/janice/Documents/Bootcamp/Git/Capstone/capstone_chat-gpt/data/chatgpt-combined_short_topics.csv")
+df_raw = pd.read_csv("data/chatgpt-combined_short_topics.csv")
 df_raw['appVersion'] = df_raw['appVersion'].replace(np.nan, "not available")
 df_raw["Operating System"] = np.where(df_raw.Source == 'Apple', "iOS", "Android")
 df_raw['at_dt'] = pd.to_datetime(df_raw['at'])
