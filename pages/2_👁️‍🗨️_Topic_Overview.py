@@ -2,7 +2,7 @@
 # streamlit run notebooks/streamlit_app.py  --theme.base="light"  --theme.primaryColor="#1b786e"  --theme.backgroundColor="#eeeeee" --theme.secondaryBackgroundColor="#f7f7f7" --theme.textColor="#424242" --theme.font="sans serif"
 
 import streamlit as st
-from streamlit_dynamic_filters import DynamicFilters
+# from streamlit_dynamic_filters import DynamicFilters
 import streamlit.components.v1 as components
 import numpy as np
 import pandas as pd
