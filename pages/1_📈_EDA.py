@@ -125,5 +125,5 @@ with col1_1:
 with col1_2:    
     #apparently you dont need to write st.write and just “” as magic commands
     if st.checkbox(f'Push this button to show sample dataframe.'): # {appversion}'):
-        st.write(df[['Source', 'content', 'category', 'Label']].sample(10))
+        st.write(df[['Source', 'Original content', 'category', 'Label']].sample(10))
     

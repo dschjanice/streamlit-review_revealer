@@ -225,13 +225,13 @@ with col5_1:
                  "Label": st.column_config.Column(
                  "Most Popular Negative")},
                 hide_index=True)
-    st.dataframe(df[df['category'] == "positive"].sort_values('thumbsUpCount', ascending=False)[['content']].head(5), 
+    st.dataframe(df[df['category'] == "positive"].sort_values('thumbsUpCount', ascending=False)[['Original content']].head(5), 
                  use_container_width=True,
                  hide_index=True)
         
 with col5_2:
     st.write(f'**Top 5 Most Popular Negative Examples**')
-    st.dataframe(df[df['category'] == "negative"].sort_values('thumbsUpCount', ascending=False)[['content']].head(5), 
+    st.dataframe(df[df['category'] == "negative"].sort_values('thumbsUpCount', ascending=False)[['Original content']].head(5), 
                  use_container_width=True,
                  hide_index=True)
 
