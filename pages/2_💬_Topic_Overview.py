@@ -106,7 +106,7 @@ with col3_1:
         fig.update_layout(
             legend_title_text=var.capitalize(),
             font=dict(size=f),
-            xaxis_title_font_size=f,
+            xaxis_title=None,
             xaxis_tickfont_size=f,
             yaxis_title="Reviews",
             yaxis_title_font_size=f,
@@ -155,7 +155,7 @@ with col3_2:
         fig.update_layout(
             legend_title_text=var.capitalize(),
             font=dict(size=f),
-            xaxis_title_font_size=f,
+            xaxis_title=None,
             xaxis_tickfont_size=f,
             yaxis_title="Reviews (%)",
             yaxis_title_font_size=f,
