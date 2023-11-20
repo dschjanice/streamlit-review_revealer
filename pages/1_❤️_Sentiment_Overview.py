@@ -96,7 +96,7 @@ with col1_1:
         for i in range(1,6,1):
             x = df_chart[var].unique()[i-1] if df_chart[var].nunique() >= i else ''
             list.append(x)
-        fig = px.histogram(df_chart, 
+        fig = px.bar(df_chart, 
             x=var,
             y='Reviews (%)',
             title="Proportion of Reviews by Sentiment " + var.capitalize(),
