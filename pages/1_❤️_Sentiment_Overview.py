@@ -91,18 +91,17 @@ with col1_1:
         df_chart = df_chart.sort_values(var, ascending = False)
         df_chart['helper'] = df_chart['Reviews (%)'].round(2)
         df_chart['helper'] = pd.Series(["{0:.1f}%".format(val * 100) for val in df_chart['helper']], index = df_chart.index)
-        df_chart['helper'] = df_chart['helper'] + '<br />(' + df_chart['Reviews'].astype(str) + ')'
+        df_chart['helper'] = df_chart['Reviews'].astype(str) + '<br />(' + df_chart['helper'] + ')'
         list=[]
         for i in range(1,6,1):
             x = df_chart[var].unique()[i-1] if df_chart[var].nunique() >= i else ''
             list.append(x)
         fig = px.bar(df_chart, 
             x=var,
-            y='Reviews (%)',
+            y='Reviews',
             title="Proportion of Reviews by Sentiment " + var.capitalize(),
             text='helper',
             template='ggplot2',
-            #hover_data={"at_ym": "|%B %d, %Y"},
             color=var,
             color_discrete_map={
                 list[0]: c1, 
