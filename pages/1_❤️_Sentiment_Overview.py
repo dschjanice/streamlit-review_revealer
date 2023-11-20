@@ -24,8 +24,6 @@ import seaborn as sns
 st.set_page_config(layout="wide")
 ## add a title
 st.title('ReviewRevealer')
-## add text in markdown
-st.write('We are showing ChatGPT Reviews for iOS and Android')
 
 # Load df
 df_raw = pd.read_csv("data/chatgpt-combined_short_topics.csv")
