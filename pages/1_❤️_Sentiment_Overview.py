@@ -89,6 +89,9 @@ with col1_1:
         df_chart = df.groupby([var]).size().reset_index(name='Reviews')
         df_chart['Reviews (%)'] = df_chart['Reviews'].transform(lambda x: x / x.sum())
         df_chart = df_chart.sort_values(var, ascending = False)
+        df_chart['helper'] = df_chart['Reviews (%)'].round(2)
+        df_chart['helper'] = pd.Series(["{0:.1f}%".format(val * 100) for val in df_chart['helper']], index = df_chart.index)
+        df_chart['helper'] = df_chart['helper'] + '<br />(' + df_chart['Reviews'].astype(str) + ')'
         list=[]
         for i in range(1,6,1):
             x = df_chart[var].unique()[i-1] if df_chart[var].nunique() >= i else ''
@@ -97,8 +100,7 @@ with col1_1:
             x=var,
             y='Reviews (%)',
             title="Proportion of Reviews by Sentiment " + var.capitalize(),
-            labels={'count': 'Reviews'},
-            text_auto='.1%',
+            text='helper',
             template='ggplot2',
             #hover_data={"at_ym": "|%B %d, %Y"},
             color=var,
@@ -111,7 +113,6 @@ with col1_1:
                 }, 
             #histnorm = "percent"
             )
-        fig.update_traces(textposition='auto')
         fig.update_layout(
             height=300,
             legend_title_text=var.capitalize(),
@@ -121,9 +122,6 @@ with col1_1:
             xaxis_tickfont_size=f,
             yaxis=dict(visible=False), 
             showlegend = False)
-        # fig.update_xaxes(
-        #     dtick="M2",
-        #     tickformat="%B\n%Y")
         st.plotly_chart(fig, use_container_width=True,height=800)
         
 with col1_2:    
