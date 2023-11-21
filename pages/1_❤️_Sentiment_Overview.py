@@ -62,15 +62,6 @@ with st.sidebar:
 df_cat = df_app[df_app['category'].isin(category)]
 df = df_cat.loc[(pd.to_datetime(df_cat['at']) >= pd.to_datetime(review_date[0])) & (pd.to_datetime(df_cat['at']) <= pd.to_datetime(review_date[1]))]
 
-
-if st.toggle('Show the topic overview'):
-    # Read file and keep in variable
-    with open("charts/visualize_docs.html" ,'r') as f: 
-        html_data = f.read()
-
-    ## Show in webpage
-    components.html(html_data, height=800)
-
 ## Plots
 #c1 = '#c0791b'
 c1 = '#86e5be'
